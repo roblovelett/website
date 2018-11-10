@@ -1,0 +1,13 @@
+{
+  "name": "website",
+  "version": "1.0.0",
+  "description": "npm packages for rob lovelett's website",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/roblovelett/website.git"
+  },
+  "author": "rob lovelett",
+  "dependencies": {
+    "html5-boilerplate": "^6.1.0"
+  }
+}

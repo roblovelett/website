@@ -1,0 +1,4 @@
+baseURL = "http://roblovelett.com"
+languageCode = "en-us"
+title = "Rob Lovelett"
+theme = "website"
