@@ -1,4 +1,6 @@
-baseURL = "http://roblovelett.com"
+baseURL = "http://roblovelett.com/"
 languageCode = "en-us"
 title = "Rob Lovelett"
 theme = "website"
+disableHugoGeneratorInject = "true"
+relativeURLs = "true"
