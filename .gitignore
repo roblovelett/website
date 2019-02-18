@@ -62,5 +62,6 @@ typings/
 
 # custom
 src/
+site/themes/hugo-theme-basic/
 .editorconfig
 .vscode
