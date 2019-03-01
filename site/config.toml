@@ -1,6 +1,6 @@
 baseURL = "http://roblovelett.com/"
 languageCode = "en-us"
 title = "Rob Lovelett"
-theme = "hugo-theme-basic"
+theme = "website"
 disableHugoGeneratorInject = "true"
 relativeURLs = "true"
