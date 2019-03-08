@@ -61,7 +61,7 @@ typings/
 .next
 
 # custom
+_tmp/
 src/
-site/themes/hugo-theme-basic/
 .editorconfig
 .vscode
