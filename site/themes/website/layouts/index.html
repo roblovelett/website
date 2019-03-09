@@ -1,13 +1,17 @@
 <!doctype html>
 <html class="no-js" lang="">
-{{ partial "head.html" . }}
+	{{ partial "head.html" . }}
 
-<body>
-	{{partial "header.html" . }}
-	<main class="wrapper">
-		<!-- content -->
-	</main>
-	{{ partial "footer.html" . }}
-</body>
+	<body>
+		<main class="wrapper">
+			{{ partial "navigation.html" . }}
+			{{ partial "header.html" . }}
+
+			<!-- content -->
+
+			{{ partial "footer.html" . }}
+		</main>
+		{{ partial "scripts.html" . }}
+	</body>
 
 </html>
