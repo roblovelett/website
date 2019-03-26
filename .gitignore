@@ -61,7 +61,7 @@ typings/
 .next
 
 # custom
-_tmp/
+.vscode/
+site/themes/tale/
 src/
 .editorconfig
-.vscode

@@ -1,14 +1,36 @@
 <head>
-	<link rel="apple-touch-icon" href="icon.png">
-	<link rel="icon" href="favicon.ico">
-	<link rel="manifest" href="site.webmanifest">
-	<link rel="stylesheet" href="css/normalize.css">
+    <!-- Meta -->
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {{- if eq .URL "/" }}
+        <meta name="description" content="{{ .Site.Params.Description }}">
+    {{- else if .Description }}
+        <meta name="description" content="{{ .Description }}">
+    {{- end }}    
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/main.css">
 	<link rel="stylesheet" href="css/milligram.min.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
-	<meta charset="utf-8">
-	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<meta name="description" content="">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<title></title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="icon.png">
+    
+    <!-- RSS -->
+    {{ with .OutputFormats.Get "rss" -}}
+        {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+    {{ end -}}
+    <link rel="manifest" href="site.webmanifest">
+    
+    <title>
+        {{- if eq .URL "/" }}
+            {{ .Site.Title }}
+        {{- else }}
+            {{ .Title }} &middot; {{ .Site.Title }}
+        {{- end }}
+    </title>
+    
 </head>

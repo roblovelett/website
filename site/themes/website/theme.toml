@@ -1,7 +1,7 @@
 name = "Website"
 license = "MIT"
 licenselink = "https://github.com/roblovelett/website/LICENSE"
-description = "Personal website for Rob Lovelett"
+description = "Personal Website for Rob Lovelett"
 homepage = "http://roblovelett.com"
 tags = []
 features = []
