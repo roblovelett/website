@@ -20,9 +20,9 @@
     <link rel="apple-touch-icon" href="icon.png">
     
     <!-- RSS -->
-    {{ with .OutputFormats.Get "rss" -}}
-        {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
-    {{ end -}}
+    <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
+    
+    <!-- Manifest -->
     <link rel="manifest" href="site.webmanifest">
     
     <title>
