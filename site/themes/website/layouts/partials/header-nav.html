@@ -1,0 +1,10 @@
+<nav class="navigation">
+	<section class="container">
+		<a class="navigation-title" href="{{ "/" | relURL }}">
+			<h1 class="title">{{ .Site.Title }}</h1>
+		</a>
+		<ul class="navigation-list float-right">
+			{{ partial "site-menu.html" . }}
+		</ul>
+	</section>
+</nav>

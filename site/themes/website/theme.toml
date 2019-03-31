@@ -6,7 +6,9 @@ homepage = "http://roblovelett.com"
 tags = []
 features = []
 min_version = "0.41"
+sectionPagesMenu = "main"
 
 [author]
-  name = "Rob Lovelett"
-  homepage = "http://roblovelett.com"
+    name = "Rob Lovelett"
+    homepage = "http://roblovelett.com"
+    

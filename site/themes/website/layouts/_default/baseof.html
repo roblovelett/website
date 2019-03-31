@@ -1,10 +1,12 @@
-<html>
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode | default "en" }}">
     {{- partial "head.html" . -}}
     <body>
-        {{- partial "header.html" . -}}
-        <div id="content">
-            {{- block "main" . }}{{- end }}
-        </div>
-        {{- partial "footer.html" . -}}
+        <main class="wrapper">
+            {{- partial "header-nav.html" . -}}
+            {{- block "content" . }}{{- end }}
+            <!-- {{- partial "footer.html" . -}} -->
+            <!-- scripts -->
+        </main>
     </body>
 </html>
