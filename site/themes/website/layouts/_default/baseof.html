@@ -1,12 +1,14 @@
+<!-- website template -->
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode | default "en" }}">
     {{- partial "head.html" . -}}
     <body>
         <main class="wrapper">
-            {{- partial "header-nav.html" . -}}
-            {{- block "content" . }}{{- end }}
-            <!-- {{- partial "footer.html" . -}} -->
-            <!-- scripts -->
+            {{- partial "nav-header.html" . -}}
+            {{ block "header" . }}{{ end }}
+            {{ block "main" . }}{{ end }}
+            {{ block "footer " . }}{{ end }}
+            {{- partial "scripts.html" . -}}
         </main>
     </body>
 </html>

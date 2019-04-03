@@ -1,32 +1,29 @@
-<!doctype html>
-<html class="no-js" lang="{{ .Site.LanguageCode | default "en" }}">
-	{{ partial "head.html" . }}
-
-	<body>
-        {{ partial "header.html" . }}
-        {{ block "main" . }} <!-- main needs class of wrapper -->
-            <!-- content -->
-        {{end}}
-        {{ partial "footer.html" . }}
-        <main class="wrapper">
-			{{ partial "navigation.html" . }}
-		
-			<!-- content -->
-
-			{{ partial "footer.html" . }}
-		</main>
-		{{ partial "scripts.html" . }}
-	</body>
-
-</html>
+<!-- website template -->
 
 
-<!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode | default "en" }}">
-    {{ partial "head.html" . }}
-    <body>
-        {{ partial "header.html" . }}
-        {{ block "main" . }}{{ end }}
-        {{ partial "footer.html" . }}
-    </body>
-</html>
+
+<!-- tales template -->
+{{ define "main" }}
+
+<main>
+	{{ partial "index/introduction.html" . }}
+
+	<div class="catalogue">
+		{{ range (.Paginate .Pages).Pages }}
+			{{ .Render "summary" }}
+		{{ end }}
+	</div>
+	
+	<div class="pagination">
+		{{ if .Paginator.HasPrev }}
+			<a href="{{ .Paginator.Prev.URL }}" class="left arrow">&#8592;</a>
+		{{ end }}
+		{{ if .Paginator.HasNext }}
+			<a href="{{ .Paginator.Next.URL }}" class="right arrow">&#8594;</a>
+		{{ end }}
+	
+		<span>{{ .Paginator.PageNumber }}</span>
+	</div>
+</main>
+
+{{ end }}

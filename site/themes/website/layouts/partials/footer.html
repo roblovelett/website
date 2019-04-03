@@ -1,7 +1,15 @@
+<!-- website template -->
 <footer class="footer">
 	<section class="container">
 		<p>
 			<!-- footer -->
 		</p>
 	</section>
+</footer>
+
+<!-- tales template -->
+<footer>
+    <span>
+    &copy; <time datetime="{{ now }}">{{ now.Format "2006" }}</time> {{ .Site.Author.name }}. {{ i18n "generator" | safeHTML }}
+    </span>
 </footer>
