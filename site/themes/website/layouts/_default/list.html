@@ -1,5 +1,26 @@
 <!-- website template -->
+{{ define "main" }}
 
+<section class="container" id="catalogue">
+    {{ range (.Paginate .Pages).Pages }}
+        {{ .Render "summary" }}
+    {{ end }}
+</section>
+
+<nav class="navigation-pagination">
+	<section class="container" id="pagination">
+		{{ if .Paginator.HasPrev }}
+			<a href="{{ .Paginator.Prev.URL }}" class="left arrow">&#8592;</a>
+		{{ end }}
+		{{ if .Paginator.HasNext }}
+			<a href="{{ .Paginator.Next.URL }}" class="right arrow">&#8594;</a>
+		{{ end }}
+	
+		<span>{{ .Paginator.PageNumber }}</span>
+	</section>
+</nav>
+
+{{ end }}
 
 
 <!-- tales template -->
