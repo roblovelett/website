@@ -1,10 +1,8 @@
 <!-- website template -->
-
-
-
-<!-- tales template -->
 <div class="post-info">
-    <span>{{ i18n "writtenBy" }}</span>
+    <span>
+        {{ i18n "writtenBy" }}
+    </span>
     {{- if .Params.Author }}
         {{ .Params.Author }}
     {{- else }}
@@ -12,7 +10,12 @@
     {{- end }}
 
     {{- if .PublishDate }}
-        <br>
-        <span>{{ i18n "on" }}&nbsp;</span><time datetime="{{ .PublishDate }}">{{ i18n "publishdate" . }}</time>
+    <br />
+    <span>
+        {{ i18n "on" }}&nbsp;
+    </span>
+    <time datetime="{{ .PublishDate }}">
+        {{ i18n "publishdate" . }}
+    </time>
     {{- end }}
 </div>

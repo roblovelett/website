@@ -1,23 +1,19 @@
 <!-- website template -->
-
-
-
-<!-- tales template -->
 {{ define "main" }}
 
-<main>
-	<div class="post">
-		{{ partial "single/post-info.html" . }}
-		{{ partial "single/title.html" . }}
+<section class="container" id="post">
+	{{ partial "single/post-info.html" . }}
+	{{ partial "single/title.html" . }}
 
-		{{ partial "single/header.html" . }}
+	{{ partial "single/header.html" . }}
 
-		{{ .Content }}
+	{{ .Content }}
 
-		{{ partial "single/footer.html" . }}
-	</div>
+	{{ partial "single/footer.html" . }}
+</section>
 
-	<div class="pagination">
+<nav class="navigation-pagination">
+	<section class="container" id="pagination">
 		{{- if .PrevPage }}
 		<a href="{{ .PrevPage.URL }}" class="left arrow">&#8592;</a>
 		{{- end }}
@@ -26,7 +22,7 @@
 		{{- end }}
 
 		<a href="#" class="top">Top</a>
-	</div>
-</main>
+	</section>
+</nav>
 
 {{ end }}
