@@ -62,7 +62,7 @@ typings/
 
 # custom
 .vscode/
-site/themes/tale/
 src/
+tmp/
 .editorconfig
 *.code-workspace
