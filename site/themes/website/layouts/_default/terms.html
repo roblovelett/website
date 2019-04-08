@@ -1,29 +1,29 @@
 <!-- website template -->
-
-
-
-<!-- tales template -->
 {{ define "main" }}
-<main>
-    <h1>{{ .Title }}</h1>
-	<div class="catalogue">
-        <ul>
-        {{- range (.Paginate .Data.Pages).Pages -}}
-            <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
-        {{- end -}}
-        </ul>
-	</div>
-	
-	<div class="pagination">
-		{{- if .Paginator.HasPrev -}}
-			<a href="{{ .Paginator.Prev.URL }}" class="left arrow">&#8592;</a>
-		{{- end -}}
-		{{- if .Paginator.HasNext -}}
-			<a href="{{ .Paginator.Next.URL }}" class="right arrow">&#8594;</a>
-		{{- end -}}
-	
-		<span>{{ .Paginator.PageNumber }}</span>
-	</div>
-</main>
+
+    <section class="container" id="catalogue">
+        <h1>{{ .Title }}</h1>
+        <div class="catalogue">
+            <ul>
+                {{- range (.Paginate .Data.Pages).Pages -}}
+                    <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+                {{- end -}}
+            </ul>
+        </div>
+            
+    </section>
+
+    <nav class="navigation-pagination">
+        <section class="container" id="pagination">
+            {{ if .Paginator.HasPrev }}
+                <a href="{{ .Paginator.Prev.URL }}" class="left arrow">&#8592;</a>
+            {{ end }}
+            {{ if .Paginator.HasNext }}
+                <a href="{{ .Paginator.Next.URL }}" class="right arrow">&#8594;</a>
+            {{ end }}
+        
+            <span>{{ .Paginator.PageNumber }}</span>
+        </section>
+    </nav>
 
 {{ end }}
