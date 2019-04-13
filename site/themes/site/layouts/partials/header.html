@@ -1,20 +1,56 @@
+<!-- merged -->
 <!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode }}">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ .Title }} | {{ .Site.Title }}</title>
-    <link rel="stylesheet" href="{{ "/css/style.css" | relURL }}" />
-    <link rel="stylesheet" href="{{ "/css/fonts.css" | relURL }}" />
-    {{ partial "head_custom.html" . }}
-  </head>
+<html lang="{{ .Site.LanguageCode | default "en" }}">
 
-  <body>
-    <nav>
-    <ul class="menu">
-      {{ range .Site.Menus.main }}
-      <li><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>
-      {{ end }}
-    </ul>
-    <hr/>
-    </nav>
+	<head>
+        
+        <!-- Meta -->
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		{{- if eq .URL "/" }}
+		<meta name="description" content="{{ .Site.Params.Description }}">
+		{{- else if .Description }}
+		<meta name="description" content="{{ .Description }}">
+		{{- end }}
+        
+        <!-- CSS -->
+		<link rel="stylesheet" href="{{ "/css/normalize.css" | relURL }}" />
+		<link rel="stylesheet" href="{{ "/css/main.css" | relURL }}" />
+		<link rel="stylesheet" href="{{ "/css/milligram.min.css" | relURL }}" />
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+        
+        <!-- Favicon -->
+		<link rel="icon" href="{{ "/favicon.ico" | relURL }}" />
+		<link rel="apple-touch-icon" href="{{ "/icon.png" | relURL }}" />
+        
+        <!-- RSS -->
+		<link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
+        
+        <!-- Manifest -->
+		<link rel="manifest" href="{{ "/site.webmanifest" | relURL" />
+        
+        <title>
+            {{- if eq .URL "/" }}
+                {{ .Site.Title }}
+            {{- else }}
+                {{ .Title }} &middot; {{ .Site.Title }}
+            {{- end }}
+        </title>
+</head>
+<body>
+    <main class=" wrapper">
+		<nav class="navigation">
+			<section class="container">
+				<a class="navigation-title" href="{{ "/" | relURL }}">
+					<h1 class="title">{{ .Site.Title }}</h1>
+				</a>
+				<ul class="navigation-list float-right">
+					{{ range .Site.Menus.main }}
+					<li class="navigation-item">
+						<a class="navigation-link" href="{{ .URL | relURL }}" title="{{ .Title }}">{{ .Name }}</a>
+					</li>
+					{{ end }}
+				</ul>
+			</section>
+		</nav>
