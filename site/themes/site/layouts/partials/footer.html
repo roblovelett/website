@@ -1,9 +1,25 @@
-  <footer>
-  {{ partial "foot_custom.html" . }}
-  {{ with .Site.Params.footer }}
-  <hr/>
-  {{ . | markdownify }}
-  {{ end }}
-  </footer>
-  </body>
+            <footer class="footer">
+                <section class="container">
+                    {{ with .Site.Params.footer }}
+                    {{ . | markdownify }}
+                    {{ end }}
+                </section>
+            </footer>
+        </main>
+
+        <!-- scripts -->
+        <script src="{{"/js/modernizr-3.6.0.min.js" | relURL"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" 
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <script src="{{"/js/plugins.js" | relURL"></script>
+        <script src="{{"/js/main.js" | relURL"></script>
+  
+        <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+        <script>
+            window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+            ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+        </script>
+        <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+        
+    </body>
 </html>
