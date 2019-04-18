@@ -1,7 +1,7 @@
 {{ partial "header.html" . }}
 
                 <article class="container">
-                    <header class="article-meta">
+                    <header>
                         <h1><span class="title">{{ .Title | markdownify }}</span></h1>
                         {{ with .Params.author }}
                         <h2 class="author">{{ . }}</h2>

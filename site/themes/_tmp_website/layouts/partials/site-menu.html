@@ -1,8 +1,0 @@
-<!-- website theme -->
-{{ $currentPage := . }}
-{{ range .Site.Menus.main }}
-    <li class="navigation-item">
-        <a class="navigation-link{{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} active{{end}}"
-            href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
-    </li>
-{{ end }}
