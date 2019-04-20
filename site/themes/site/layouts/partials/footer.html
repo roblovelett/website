@@ -8,17 +8,12 @@
         </main>
 
         <!-- scripts -->
-        <script src="{{"/js/modernizr-3.6.0.min.js" | relURL"></script>
-        <script src="https://code.jquery.com/jquery-3.3.1.min.js" 
-            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-        <script src="{{"/js/plugins.js" | relURL"></script>
-        <script src="{{"/js/main.js" | relURL"></script>
-  
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <script src="{{ "/js/vendor/modernizr-3.6.0.min.js" | relURL }}"></script>
+        <script src="{{ "/js/main.js" | relURL }}"></script>
+    
         <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
-        <script>
-            window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
-            ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
-        </script>
+        <script> window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date; ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview') </script>
         <script src="https://www.google-analytics.com/analytics.js" async defer></script>
         
     </body>

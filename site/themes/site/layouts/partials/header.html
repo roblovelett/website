@@ -14,13 +14,13 @@
 		{{- end }}
         
         <!-- CSS -->
-		<link rel="stylesheet" href="{{ "/css/normalize.css" | relURL }}" />
-		<link rel="stylesheet" href="{{ "/css/main.css" | relURL }}" />
-		<link rel="stylesheet" href="{{ "/css/milligram.min.css" | relURL }}" />
+        <link rel="stylesheet" href="{{ "/css/vendor/normalize.css" | relURL }}" />
+        <link rel="stylesheet" href="{{ "/css/vendor/html5-boilerplate.css" | relURL }}" />
+        <link rel="stylesheet" href="{{ "/css/vendor/milligram.min.css" | relURL }}" />
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
-        
+        <link rel="stylesheet" href="{{ "/css/main.css" | relURL }}" />
         <!-- Favicon -->
-		<link rel="icon" href="{{ "/favicon.ico" | relURL }}" />
+		<link rel="icon" href="{{ "/img/favicon.ico" | relURL }}" />
 		<link rel="apple-touch-icon" href="{{ "/icon.png" | relURL }}" />
         
         <!-- RSS -->
@@ -39,16 +39,14 @@
 
     </head>
     <body>
-        <main class=" wrapper">
-            <nav class="navigation">
+        <main class="wrapper">
+            <nav class="clearfix">
                 <section class="container">
-                    <a class="navigation-title" href="{{ "/" | relURL }}">
-                        <h1 class="title">{{ .Site.Title }}</h1>
-                    </a>
-                    <ul class="navigation-list float-right">
+                    <a class="float-left" href="{{ "/" | relURL }}"><h1>{{ .Site.Title }}</h1></a>
+                    <ul class="float-right">
                         {{ range .Site.Menus.main }}
-                        <li class="navigation-item">
-                            <a class="navigation-link" href="{{ .URL | relURL }}" title="{{ .Title }}">{{ .Name }}</a>
+                        <li>
+                            <a href="{{ .URL | relURL }}" title="{{ .Title }}">{{ .Name }}</a>
                         </li>
                         {{ end }}
                     </ul>

@@ -22,4 +22,4 @@ footnotereturnlinkcontents = "↩"
     weight = 2
 [params]
     description = "A website built through Hugo and blogdown."
-    footer = "&copy; [Rob Lovelett](http://roblovelett.com) 2019 | [Github](https://github.com/roblovelett)"
+    footer = "[Rob Lovelett](http://roblovelett.com) 2019 | [Github](https://github.com/roblovelett)"
