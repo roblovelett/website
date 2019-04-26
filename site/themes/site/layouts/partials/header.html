@@ -14,11 +14,12 @@
 		{{- end }}
         
         <!-- CSS -->
+        <link rel="stylesheet" href="{{ "/css/main.css" | relURL }}" />
         <link rel="stylesheet" href="{{ "/css/vendor/normalize.css" | relURL }}" />
         <link rel="stylesheet" href="{{ "/css/vendor/html5-boilerplate.css" | relURL }}" />
         <link rel="stylesheet" href="{{ "/css/vendor/milligram.min.css" | relURL }}" />
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
-        <link rel="stylesheet" href="{{ "/css/main.css" | relURL }}" />
+    
         <!-- Favicon -->
 		<link rel="icon" href="{{ "/img/favicon.ico" | relURL }}" />
 		<link rel="apple-touch-icon" href="{{ "/icon.png" | relURL }}" />
@@ -40,10 +41,10 @@
     </head>
     <body>
         <main class="wrapper">
-            <nav class="clearfix">
+            <nav class="navigation clearfix">
                 <section class="container">
                     <a class="float-left" href="{{ "/" | relURL }}"><h1>{{ .Site.Title }}</h1></a>
-                    <ul class="float-right">
+                    <ul class="navigation-list float-right">
                         {{ range .Site.Menus.main }}
                         <li>
                             <a href="{{ .URL | relURL }}" title="{{ .Title }}">{{ .Name }}</a>
