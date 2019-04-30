@@ -1,17 +1,16 @@
-{{ partial "header.html" . }}
-
-                <section class="container">
-                    {{if not .IsHome }}
-                    <h1><span class="title">{{ .Title | markdownify }}</span></h1>
-                    {{ end }}
-                    <ul>
-                        {{ range (where .Data.Pages "Section" "!=" "") }}
-                        <li>
-                            <time pubdate datetime="{{ .Date.Format "2006-01-02" }}"><span class="date">{{ .Date.Format "2006/01/02" }}</span></time>
-                            <a href="{{ .URL }}">{{ .Title | markdownify }}</a>
-                        </li>
-                        {{ end }}
-                    </ul>
-                </section>
-
-{{ partial "footer.html" . }}
+{{ define "main" }}
+<section class="container">
+    {{if not .IsHome }}
+    <h2><span class="title">{{ .Title | markdownify }}</span></h2>
+    {{ end }}
+    {{ .Content }}
+    <ul>
+        {{ range (where .Data.Pages "Section" "!=" "") }}
+        <li>
+            <time pubdate datetime="{{ .Date.Format "2006-01-02" }}"><span class="date">{{ .Date.Format "2006-01-02" }}</span></time>
+            <a href="{{ .URL }}">{{ .Title | markdownify }}</a>
+        </li>
+        {{ end }}
+    </ul>
+</section>
+{{ end }}

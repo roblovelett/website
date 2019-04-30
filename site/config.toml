@@ -1,6 +1,6 @@
 baseURL = "/"
 languageCode = "en-us"
-title = "Rob Lovelett's website"
+title = "Rob Lovelett's Website"
 theme = "site"
 googleAnalytics = ""
 disqusShortname = ""
@@ -9,9 +9,7 @@ preserveTaxonomyNames = true
 footnotereturnlinkcontents = "↩"
 
 [permalinks]
-    post = "/post/:year/:month/:day/:slug/"
-    note = "/note/:year/:month/:day/:slug/"
-
+    blog = "/blog/:year/:month/:day/:slug/"
 [[menu.main]]
     name = "Home"
     url = "/"
@@ -20,6 +18,10 @@ footnotereturnlinkcontents = "↩"
     name = "About"
     url = "/about/"
     weight = 2
+[[menu.main]]
+    name = "Work"
+    url = "/work/"
+    weight = 2
 [params]
-    description = "A website built through Hugo and blogdown."
+    description = "A website built with Hugo."
     footer = "[Rob Lovelett](http://roblovelett.com) 2019 | [Github](https://github.com/roblovelett)"

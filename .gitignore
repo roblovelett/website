@@ -63,6 +63,6 @@ typings/
 # custom
 .vscode/
 src/
-tmp/
+_tmp/
 .editorconfig
 *.code-workspace
