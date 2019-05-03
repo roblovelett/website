@@ -6,12 +6,10 @@
         {{ .Content }}
         {{ end }}
 
-        {{ block "footer" . }}
         {{ partial "footer" . }}
-        {{ block "scripts" . }}
         {{ partial "scripts" . }}
+        {{ block "scripts-added" . }}
         {{ end }}
-        {{ end }}
-
+        
     </body>
 </html>
