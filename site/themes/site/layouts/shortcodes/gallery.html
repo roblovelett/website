@@ -1,0 +1,7 @@
+{{- $pathURL := .Get "pathURL" -}}
+{{- $path := .Get "path" -}}
+{{- $files := readDir $path -}}
+
+{{- range $files }}
+{{ .Name }}
+{{- end }}
