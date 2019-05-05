@@ -15,13 +15,17 @@ footnotereturnlinkcontents = "↩"
     url = "/"
     weight = 1
 [[menu.main]]
-    name = "About"
-    url = "/about/"
-    weight = 2
-[[menu.main]]
     name = "Work"
     url = "/work/"
     weight = 2
+[[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 3
+[[menu.main]]
+    name = "Blog"
+    url = "/blog/"
+    weight = 4
 [params]
     description = "A website built with Hugo."
     footer = "[Rob Lovelett](http://roblovelett.com) 2019 | [Github](https://github.com/roblovelett)"

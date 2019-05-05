@@ -1,7 +1,7 @@
 {{- $pathURL := .Get "pathURL" -}}
 {{- $path := .Get "path" -}}
-{{- $files := readDir $path -}}
+{{- $sections := readDir $path -}}
 
-{{- range $files }}
-{{ .Name }}
+{{- range $sections | intersect (where $sections ".Name" "!=" "_index.md") }}
+<a href="{{ $pathURL }}{{ .Name | relURL }}">{{ .Name }}</a>
 {{- end }}
