@@ -1,7 +1,3 @@
-{{- $pathURL := .Get "pathURL" -}}
-{{- $path := .Get "path" -}}
-{{- $sections := readDir $path -}}
-
-{{- range $sections | intersect (where $sections ".Name" "!=" "_index.md") }}
-<a href="{{ $pathURL }}{{ .Name | relURL }}">{{ .Name }}</a>
-{{- end }}
+{{ range where .Site.Pages "Section" "work" }} 
+<a href="{{ .Permalink }}">{{ .Name }}</a>
+{{ end }}
