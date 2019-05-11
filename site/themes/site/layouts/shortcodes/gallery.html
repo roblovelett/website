@@ -1,3 +1,7 @@
-{{ range where .Site.Pages "Section" "work" }} 
-<a href="{{ .Permalink }}">{{ .Name }}</a>
+{{ range where .Site.RegularPages "Section" "work" }}
+<a href="{{ .Permalink }}" class="mix {{ echoParam .Params "category" -}}">{{ .Name }}</a> 
+{{ end }}
+
+{{ define "scripts-added" }}
+<script src="{{ "/js/vendor/mixitup.min.js" | relURL }}"></script>
 {{ end }}
