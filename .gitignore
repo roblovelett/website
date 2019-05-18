@@ -64,5 +64,6 @@ typings/
 .vscode/
 src/
 _tmp/
+site/public/
 .editorconfig
 *.code-workspace
