@@ -1,0 +1,24 @@
+html {
+    overflow-y: scroll;
+}
+
+.wrapper {
+    display: block;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.navigation {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+}
+
+.navigation-list {
+    list-style-type: none;
+}
+
+.navigation-list li {
+    display: inline;
+}

@@ -1,10 +1,9 @@
 {{ define "main" }}
-<section class="container">
     {{if not .IsHome }}
     <h2><span class="title">{{ .Title | markdownify }}</span></h2>
     {{ end }}
     {{ .Content }}
-    <!--x
+    
     <ul>
         {{ range (where .Data.Pages "Section" "!=" "") }}
         <li>
@@ -13,6 +12,5 @@
         </li>
         {{ end }}
     </ul>
-    -->
-</section>
+    
 {{ end }}

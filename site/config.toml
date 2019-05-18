@@ -9,7 +9,8 @@ preserveTaxonomyNames = true
 footnotereturnlinkcontents = "↩"
 
 [permalinks]
-    blog = "/blog/:year/:month/:day/:slug/"
+    blog = "/blog/:slug/"
+
 [[menu.main]]
     name = "Work"
     url = "/work/"
@@ -22,6 +23,11 @@ footnotereturnlinkcontents = "↩"
     name = "Blog"
     url = "/blog/"
     weight = 3
+
 [params]
     description = "A website built with Hugo."
     footer = "[Rob Lovelett](http://roblovelett.com) 2019 | [Github](https://github.com/roblovelett)"
+    galleryThumbWidths = [3840, 2560, 1920, 1366, 1280, 640, 320, 160]
+
+[imaging]
+    quality = 70

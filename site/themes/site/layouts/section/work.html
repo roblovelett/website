@@ -1,0 +1,16 @@
+{{ define "main" }}
+    <h2><span class="title">{{ .Title | markdownify }}</span></h2>
+    {{ .Content }}
+    
+    <!-- GALLERY -->
+    {{ range where .Site.RegularPages "Section" "work" }}
+    <a href="{{ .RelPermalink }}" class="mix {{ echoParam .Params "category" -}}">
+        <img src="{{ .RelPermalink }}{{ echoParam .Params "thumbnail" }}" srcset="{{ .RelPermalink }}{{ echoParam .Params "thumbnail" }} " />
+    </a>
+    {{ end }}
+
+{{ end }}
+
+{{ define "scripts-added" }}
+<script src="{{ "/js/vendor/mixitup.min.js" | relURL }}"></script>
+{{ end }}
