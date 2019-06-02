@@ -7,34 +7,30 @@ var fs = require('fs'),
 var imageOptions = {
         widths: [3840, 2560, 1920, 1366, 1280, 640, 320, 160],
     },
-    imagePaths = glob.sync("../content/**/*.{png,jpg,gif}");
-
-if (Array.isArray(imagePaths) && imagePaths.length) {
-    var image = {},
-        images;
+    imagePaths = glob.sync("../content/**/*.{png,jpg,gif}"),
+    imagesTotal = imagePaths.length;
     
-    for (i=0; i < imagePaths.length; i++) {
-        image.path = imagePaths[i];
-        image.widths = [];
+if (Array.isArray(imagePaths) && Number.isInteger(imagesTotal)) {
 
-        // get original width
-        gm(image.path).identify((err, data) => {
+    var images = {},
+        image = {};
+    
+    for (i=0; i < imagesTotal; i++) {
+        gm(imagePaths[i]).identify((err, data) => {
             if (!err) {
-                image.widths.push(data.size.width);        
+                image.size = data.size;
+                image.path = data.path;
+                image.size.widths = [];
+                image.size.widths.push(data.size.width);
                 
                 for (i=0; i < imageOptions.widths.length; i++) {
-                    if (imageOptions.widths[i] < image.widths[0]) {
-                        console.log(imageOptions.widths[i] + ' is < ' + image.widths[0]);
-                        image.widths.push(imageOptions.widths[i]);
-                   }
-                }
-
-                console.log('image widths:' + image.widths);
+                    if (image.size.widths[0] > imageOptions.widths[i]) {
+                        image.size.widths.push(imageOptions.widths[i]);
+                    }
+                }                
             }
-        });
-
-        // generate images below original width
-        // image.widths;
-
+        })
     }
-}
+
+};
+    
