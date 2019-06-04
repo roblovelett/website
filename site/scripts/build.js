@@ -12,9 +12,9 @@ var imageOptions = {
     
 if (Array.isArray(imagePaths) && Number.isInteger(imagesTotal)) {
 
-    var images = {},
+    var imagesArray = [],
         image = {};
-    
+        
     for (i=0; i < imagesTotal; i++) {
         gm(imagePaths[i]).identify((err, data) => {
             if (!err) {
@@ -27,10 +27,15 @@ if (Array.isArray(imagePaths) && Number.isInteger(imagesTotal)) {
                     if (image.size.widths[0] > imageOptions.widths[i]) {
                         image.size.widths.push(imageOptions.widths[i]);
                     }
-                }                
+                }
+            }
+
+            imagesArray.push(image);
+
+            if (image.size.widths.length > 1) {
+                console.log("image.size.widths is > 1");
             }
         })
     }
-
 };
     
