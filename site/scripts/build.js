@@ -12,14 +12,15 @@ var imageOptions = {
     
 if (Array.isArray(imagePaths) && Number.isInteger(imagesTotal)) {
 
-    var imagesArray = [],
+    var images = {},
+        imagesArray = [],
         image = {};
         
     for (i=0; i < imagesTotal; i++) {
         gm(imagePaths[i]).identify((err, data) => {
             if (!err) {
                 image.size = data.size;
-                image.path = data.path;
+                image.imageOriginalPath = data.path;
                 image.size.widths = [];
                 image.size.widths.push(data.size.width);
                 
@@ -30,10 +31,33 @@ if (Array.isArray(imagePaths) && Number.isInteger(imagesTotal)) {
                 }
             }
 
-            imagesArray.push(image);
+            //imagesArray.push(image);
 
             if (image.size.widths.length > 1) {
-                console.log("image.size.widths is > 1");
+                 
+                image = {
+                    original: { 
+                        pathPrivate: '../content/foo/bar/img.png',
+                        pathPublic: '../public/foo/bar/img.png',
+                        size: {
+                            width: 1620,
+                            height: 912
+                        }
+                    },
+                    generated: [{ 
+                        pathPublic: '../public/foo/bar/img-1366.png',
+                        size: {
+                            width: 1366,
+                            height: 769
+                        },
+                    }, /* image objects */ {
+                        pathPublic: '../public/foo/bar/img-160.png',
+                        size: {
+                            width: 1366,
+                            height: 769
+                        }
+                    }]
+                };
             }
         })
     }
