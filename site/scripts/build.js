@@ -10,23 +10,33 @@ var imageOptions = {
     imagePaths = glob.sync("../content/**/*.{png,jpg,gif}"),
     imagesTotal = imagePaths.length;
     
-if (Array.isArray(imagePaths) && Number.isInteger(imagesTotal)) {
+if (Array.isArray(imagePaths) && Number.isInteger(imagesTotal) && imagesTotal > 0) {
 
-    var images = {},
-        imagesArray = [],
+    var /*images = {},
+        imagesArray = [],*/
         image = {};
         
     for (i=0; i < imagesTotal; i++) {
         gm(imagePaths[i]).identify((err, data) => {
             if (!err) {
-                image.size = data.size;
-                image.imageOriginalPath = data.path;
-                image.size.widths = [];
-                image.size.widths.push(data.size.width);
+
+                image.original.pathPrivate = data.path,
+                image.original.pathPublic = image.original.pathPrivate.replace("content", "public");
+                image.original.filename = image.original.pathPublic.slice(0, data.path.lastIndexOf("/"));
+                image.original.size = data.size;
                 
                 for (i=0; i < imageOptions.widths.length; i++) {
-                    if (image.size.widths[0] > imageOptions.widths[i]) {
-                        image.size.widths.push(imageOptions.widths[i]);
+                    if (image.original.size.width[0] > imageOptions.widths[i]) {
+                        image.generated = [];
+                        image.generated.push({
+                            pathPublic: ''
+                        })
+                    }
+                }
+
+                for (i=0; i < imageOptions.widths.length; i++) {
+                    if (image.original.size.width[0] > imageOptions.widths[i]) {
+                        image.generated.size.widths.push(imageOptions.widths[i]);
                     }
                 }
             }
