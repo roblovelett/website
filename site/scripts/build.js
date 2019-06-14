@@ -25,20 +25,44 @@ if (Array.isArray(imagePaths) && Number.isInteger(imagesTotal) && imagesTotal > 
                 image.original.filename = image.original.pathPublic.slice(0, data.path.lastIndexOf("/"));
                 image.original.size = data.size;
                 
+                // determine if generated image should be arr
                 for (i=0; i < imageOptions.widths.length; i++) {
-                    if (image.original.size.width[0] > imageOptions.widths[i]) {
+                    if (image.original.size.width > imageOptions.widths[i]) {
+                        
+                        var currentGeneratedImage = {};
                         image.generated = [];
-                        image.generated.push({
-                            pathPublic: ''
-                        })
+                        
+                        // for each image.generated obj
+                        for (i=0; i < imageOptions.length; i++) {
+                            if (image.original.size.width > imageOptions.widths[i]) {
+                        // declare prop. pathPublic w/ append -width.ext i.e. img-1336.ext
+                                currentGeneratedImage.pathPublic = '../path.ext';
+                            }
+                        }
+
+                        break;
                     }
                 }
 
-                for (i=0; i < imageOptions.widths.length; i++) {
+                        /*
+                        generated: [{ 
+                            pathPublic: '../public/foo/bar/img-1366.png',
+                            size: {
+                                width: 1366,
+                                height: 769
+                            },
+                            */
+                        
+                        
+                        //image.generated.push({});
+                    
+                }
+
+                /*for (i=0; i < imageOptions.widths.length; i++) {
                     if (image.original.size.width[0] > imageOptions.widths[i]) {
                         image.generated.size.widths.push(imageOptions.widths[i]);
                     }
-                }
+                }*/
             }
 
             //imagesArray.push(image);
